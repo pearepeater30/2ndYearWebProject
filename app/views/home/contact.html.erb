@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Contact Us</h1>
+<p>Complete the following form to get in touch with us</p>
+
+<%= form_tag( { :action => 'contact' }, :multipart => true ) %>
+<form>
+  Name:<br>
+  <%= text_field :modelname, :attribute_name, options %>
+  Email:<br>
+  <%= text_field :modelname, :attribute_name, options %>
+  Telephone:<br>
+  <%= text_field :modelname, :attribute_name, options %>
+  Message:<br>
+  <%= text_area "post", "body", "cols" => 20, "rows" => 40%>
+</form>
+<%= submit_tag( "Upload file" ) %>
+<%= end_form_tag %>
+
+</body>
+</html>
