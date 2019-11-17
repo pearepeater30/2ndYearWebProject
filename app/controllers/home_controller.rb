@@ -11,9 +11,9 @@ class HomeController < ApplicationController
     if email.blank?
       flash[:alert] = "You must supply an email address"
     else
+      ContactMailer.contact_email(email,name,telephone,message).deliver_now
       flash[:notice] = "Thank you. We will be in touch shortly"
     end
-
     redirect_to root_path
   end
 end
