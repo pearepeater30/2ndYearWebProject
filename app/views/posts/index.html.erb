@@ -9,9 +9,8 @@
 <% @posts.each do |post| %>
     <h2><%= post.title %></h2>
     <p>Published at <%= time_ago_in_words(post.created_at) %></p>
-    <p><%= link_to 'Show', post_path(post) %></p>
-<% end %>
-
-<%= link_to 'Create New Post', new_post_path%>
+    <p>Posted by <%= post.user.email %></p>
+    <p><%= link_to 'Open Post', post_path(post) %></p>
+  <% end %>
 </body>
 </html>

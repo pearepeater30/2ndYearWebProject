@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :examples
   resources :posts
   root 'posts#index'
   get 'contact', to:'home#contact'

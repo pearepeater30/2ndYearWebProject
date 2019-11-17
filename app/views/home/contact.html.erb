@@ -7,20 +7,22 @@
 <body>
 <h1>Contact Us</h1>
 <p>Complete the following form to get in touch with us</p>
+<div>
+  <%= form_with(url: "request_contact_path", method: "post") do %>
+    <%= label_tag(:name, "Name:") %>
+    <%= text_field_tag(:name) %>
 
-<%= form_tag( { :action => 'contact' }, :multipart => true ) %>
-<form>
-  Name:<br>
-  <%= text_field :modelname, :attribute_name, options %>
-  Email:<br>
-  <%= text_field :modelname, :attribute_name, options %>
-  Telephone:<br>
-  <%= text_field :modelname, :attribute_name, options %>
-  Message:<br>
-  <%= text_area "post", "body", "cols" => 20, "rows" => 40%>
-</form>
-<%= submit_tag( "Upload file" ) %>
-<%= end_form_tag %>
+    <%= label_tag(:email, "Email:") %>
+    <%= text_field_tag(:email) %>
 
+    <%= label_tag(:telephone, "Telephone") %>
+    <%= text_field_tag(:telephone) %>
+
+    <%= label_tag(:message, "Message") %>
+    <%= text_field_tag(:message) %>
+
+    <%= submit_tag("Submit") %>
+  <% end %>
+</div>
 </body>
 </html>
