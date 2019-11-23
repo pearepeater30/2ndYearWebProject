@@ -1,13 +1,17 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %> |
-<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class = "post_content">
+  <h1><%= @post.title %></h1>
+  <div class = "actual_post_content">
+    <p><%= @post.content %></p>
+  </div>
+  <div class="button-group">
+    <div class="btn btn-primary btn-sm">
+      <a><%= link_to 'Edit', edit_post_path(@post) %></a>
+    </div>
+    <div class="btn btn-secondary btn-sm">
+      <a><%= link_to 'Back', posts_path %></a>
+    </div>
+    <div class="btn btn-danger btn-sm">
+      <a><%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+    </div>
+  </div>
+</div>

@@ -15,6 +15,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "header";
 $backgroundcolor: #EDEFF0;
 
 body {
@@ -30,18 +31,58 @@ body {
     background: white;
     padding: 2em 5%;
     border-radius: .5em;
+
     .post {
       margin: 1em 0;
       padding: 1em 0;
       border-bottom: 1px solid #D1d1d1;
+      p{
+        display: inline;
+      }
       .date {
         margin-top: .25rem;
         font-size: 0.9rem;
         color: #B2BAC2;
       }
+      #button{
+        a{
+          color: white;
+        }
+      }
+    }
+  }
+
+  .post_content{
+    background: white;
+    padding: 2em 5%;
+    border-radius: .5em;
+    h1{
+      font-weight: 100;
+      font-size: 2em;
+      color: #397CAC;
+      margin-top: 0;
+    }
+    .actual_post_content{
+      background: slategrey;
+      border-radius: .5em;
+      margin: 1em 0;
+      padding: 2em 5%;
+      p{
+        color: white;
+        font-size: 0.9em;
+        line-height: 1.5;
+      }
+    }
+    .button-group{
+      a{
+        color: white;
+      }
     }
   }
 }
+
+
+
 
 
 

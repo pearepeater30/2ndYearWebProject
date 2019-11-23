@@ -1,7 +1,33 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-form label, form input{
-  display:block;
-  margin: 10px;
+.contentbox{
+  width: 70%; /* Full width */
+  height: 150px;
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
+
+.container{
+  form input{
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px;
+    height: 30px;
+    margin-left: 0;
+  }
+  form label{
+    margin-left: 0;
+  }
+  form button{
+    margin-left: 0;
+  }
+}
+
+
+
+
