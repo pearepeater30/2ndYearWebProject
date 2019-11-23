@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Untitled2</title>
+  <title>Posts</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
@@ -14,7 +14,6 @@
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
 </head>
 
 <body>
@@ -24,20 +23,7 @@
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
-<%flash.each do |key,value|%>
-  <%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>
-<% end %>
-<header class = 'main_header'>
-  <p id = "logo"><%= link_to "Nathan's Rails Forum", posts_path%></p>
-  <p id = "button"><%= link_to 'Contact Us', contact_path%> </p>
-  <%if user_signed_in? %>
-    <p id = "button"><%= link_to 'Create New Post', new_post_path%> </p>
-    <p id = "button"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete%> </p>
-  <% else %>
-    <p id = "button"><%= link_to 'Sign In', new_user_session_path%> </p>
-    <p id = "button"><%= link_to 'Sign Up', new_user_registration_path%> </p>
-  <% end %>
-</header>
+<%= render "shared/header" %>
 <div class = "wrapper">
   <%= yield %>
 </div>

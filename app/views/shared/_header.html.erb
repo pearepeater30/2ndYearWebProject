@@ -1,13 +1,19 @@
-<link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Lato">
-
-<div class="navbar-inner">
-  <div class="container">
-    <nav>
-      <ul class="nav pull-right">
-        <li><%= link_to "Home",    '#' %></li>
-        <li><%= link_to "Help",    '#' %></li>
-        <li><%= link_to "Sign in", '#' %></li>
-      </ul>
-    </nav>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <span class="navbar-brand">Nathan's Forum</span>
+  <button type="button" class = "navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="navbarNavAltMarkup" class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <a class="nav-item nav-link active" ><%= link_to "Home", posts_path%> <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" ><%= link_to 'Contact Us', contact_path%></a>
+      <%if user_signed_in? %>
+        <a class="nav-item nav-link" ><%= link_to 'Create New Post', new_post_path%></a>
+        <a class="nav-item nav-link" ><%= link_to 'Sign Out', destroy_user_session_path, method: :delete%></a>
+      <% else %>
+        <a class="nav-item nav-link" ><%= link_to 'Sign In', new_user_session_path%></a>
+        <a class="nav-item nav-link" ><%= link_to 'Sign Up', new_user_registration_path%></a>
+      <% end %>
+    </ul>
   </div>
-</div>
+</nav>
