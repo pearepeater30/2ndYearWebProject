@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.all.order("created_at DESC")
@@ -24,6 +24,9 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @event = current_user.posts.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path, alert: "You cannot edit this"
   end
 
   def update
@@ -35,8 +38,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
+    @event = current_user.posts.find(params[:id]).destroy
     redirect_to root_path
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path, alert: "You cannot delete this"
   end
 
   private

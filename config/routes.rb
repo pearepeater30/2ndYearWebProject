@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  get 'like/create'
+  get 'like/destroy'
   devise_for :users
-  resources :posts
+  resources :posts do
+    resources :like, only: [:create, :destroy]
+  end
   root 'posts#index'
   get 'contact', to:'home#contact'
   post 'request_contact', to: 'home#request_contact'
