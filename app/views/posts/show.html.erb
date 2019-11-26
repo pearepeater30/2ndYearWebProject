@@ -1,18 +1,11 @@
-<div class = "post_content">
+<div class="post_content">
   <h1><%= @post.title %></h1>
-  <div class = "actual_post_content">
+  <div class="actual_post_content">
     <p><%= @post.content %></p>
   </div>
   <div class="button-group">
-    <div class="btn btn-primary btn-sm">
-      <a><%= link_to 'Edit', edit_post_path(@post) %></a>
-    </div>
-    <div class="btn btn-secondary btn-sm">
-      <a><%= link_to 'Back', posts_path %></a>
-    </div>
-    <% %>
-    <div class="btn btn-danger btn-sm">
-      <a><%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %></a>
-    </div>
+      <a><%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary btn-sm" %></a>
+      <%= link_to 'Back', posts_path, class: "btn btn-secondary btn-sm" %>
+      <%= link_to 'Delete', @post, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger btn-sm" %>
   </div>
 </div>

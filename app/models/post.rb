@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   validates :title, presence: true
   has_many :likes, dependent: :destroy
 
+  scope :user_posts, ->(user) {where(['user_id=?', user.id])}
+
   def likes_score
     likes.count
   end

@@ -2,19 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Homepage</title>
 </head>
 <body>
-<h1>Index Page</h1>
+<h1>Home Page</h1>
 <div class="posts">
 <% @posts.each do |post| %>
   <div class = "post">
     <h2><%= post.title %></h2>
     <p class = "date">Published at <%= time_ago_in_words(post.created_at) %></p>
     <p>Posted by <%= post.user.email %></p>
-    <div class="btn btn-primary btn-sm" id = "button">
-      <p><%= link_to 'Open Post', post_path(post) %></p>
-    </div>
+    <%= link_to 'Open Post', post_path(post), class: "btn btn-primary btn-sm", id: "button"%>
   </div>
 <% end %>
 </div>
