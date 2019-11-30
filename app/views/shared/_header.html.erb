@@ -5,14 +5,14 @@
   </button>
   <div id="navbarNavAltMarkup" class="collapse navbar-collapse">
     <div class="navbar-nav">
-      <a class="nav-item " ><%= link_to "Home", posts_path%></a>
-      <a class="nav-item" ><%= link_to 'Contact Us', contact_path%></a>
+      <a class="nav-item " ><%= link_to t('.home'), posts_path%></a>
+      <a class="nav-item" ><%= link_to t('.contact'), contact_path%></a>
       <%if user_signed_in? %>
-        <a class="nav-item" ><%= link_to 'Create New Post', new_post_path%></a>
-        <a class="nav-item" ><%= link_to 'Sign Out', destroy_user_session_path, method: :delete%></a>
+        <a class="nav-item" ><%= link_to t('.create'), new_post_path%></a>
+        <a class="nav-item" ><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete%></a>
       <% else %>
-        <a class="nav-item" ><%= link_to 'Sign In', new_user_session_path%></a>
-        <a class="nav-item" ><%= link_to 'Sign Up', new_user_registration_path%></a>
+        <a class="nav-item" ><%= link_to t('.sign_in'), new_user_session_path%></a>
+        <a class="nav-item" ><%= link_to t('.sign_up'), new_user_registration_path%></a>
       <% end %>
     </div>
   </div>

@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
 </head>
 <body>
 <p>Dear Nathan,</p>
-<p>Could you get in touch with me please?</p>
+<p><%= t('.subject') %></p>
 <dl>
-  <dt>Name:</dt>
+  <dt><%= t('.name') %></dt>
   <dd><%= @name %></dd>
-  <dt>Email:</dt>
+  <dt><%= t('.email') %>:</dt>
   <dd><%= @email %></dd>
-  <dt>Telephone:</dt>
+  <dt><%= t('.telephone') %></dt>
   <dd><%= @telephone %></dd>
 </dl>
 <p><%= @message %></p>
 
-<p>Thanks,</p>
+<p><%= t('.thanks') %></p>
 <p><%= @name %></p>
 </body>
 </html>

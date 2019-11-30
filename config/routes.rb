@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'like/create'
   get 'like/destroy'
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   resources :posts do
     resources :like, only: [:create, :destroy]
   end

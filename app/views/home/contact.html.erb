@@ -9,19 +9,19 @@
 <p>Complete the following form to get in touch with us</p>
 <div>
   <%= form_with(url: request_contact_path, method: "post") do %>
-    <%= label_tag(:name, "Name:") %>
+    <%= label_tag(:name, t('.name')) %>
     <%= text_field_tag(:name) %>
 
-    <%= label_tag(:email, "Email:") %>
+    <%= label_tag(:email, t('.email')) %>
     <%= text_field_tag(:email) %>
 
-    <%= label_tag(:telephone, "Telephone") %>
+    <%= label_tag(:telephone, t('.telephone')) %>
     <%= text_field_tag(:telephone) %>
 
-    <%= label_tag(:message, "Message") %>
+    <%= label_tag(:message, t('.message')) %>
     <%= text_field_tag(:message) %>
 
-    <%= submit_tag("Submit") %>
+    <%= submit_tag(t('.submit')) %>
   <% end %>
 </div>
 </body>

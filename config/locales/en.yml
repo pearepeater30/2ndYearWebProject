@@ -30,4 +30,44 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  shared:
+    header:
+      home: "Home"
+      contact: "Contact Us"
+      create: "Create New Post"
+      sign_out: "Sign Out"
+      sign_in: "Sign In"
+      sign_up: "Sign_up"
+  posts:
+    new:
+      title: "New Post"
+    index:
+      title: "Home Page"
+      open_page_button: "Open Post"
+    edit:
+      title: "Editing Post"
+    form:
+      back_button: "Back"
+    show:
+      edit_button: "Edit"
+      back_button: "Back"
+      delete_button: "Delete"
+  home:
+    contact:
+      name: "Name"
+      email: "Email"
+      telephone: "Telephone"
+      message: "Message"
+      submit: "Submit"
+  contact_mailer:
+    contact_email:
+      name: "Name"
+      subject: "Could you get in touch with me please?"
+      email: "Email"
+      telephone: "Telephone"
+      thanks: "Thanks,"
+  user_mailer:
+    welcome_email:
+
+
   hello: "Hello world"

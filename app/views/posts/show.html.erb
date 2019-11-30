@@ -4,8 +4,8 @@
     <p><%= @post.content %></p>
   </div>
   <div class="button-group">
-      <a><%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary btn-sm" %></a>
-      <%= link_to 'Back', posts_path, class: "btn btn-secondary btn-sm" %>
-      <%= link_to 'Delete', @post, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger btn-sm" %>
+      <a><%= link_to t('.edit_button'), edit_post_path(@post), class: "btn btn-primary btn-sm" %></a>
+      <%= link_to t('.back_button'), posts_path, class: "btn btn-secondary btn-sm" %>
+      <%= link_to t('.delete_button'), @post, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger btn-sm" %>
   </div>
 </div>
