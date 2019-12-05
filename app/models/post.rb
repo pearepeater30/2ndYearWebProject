@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   validates :title, presence: true
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   scope :user_posts, ->(user) {where(['user_id=?', user.id])}
 

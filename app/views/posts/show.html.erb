@@ -3,6 +3,11 @@
   <div class="actual_post_content">
     <p><%= @post.content %></p>
   </div>
+  <div class = "show_comments">
+    <%= render @post.comments %>
+  </div>
+  <h3>Comments</h3>
+  <%= render "comments/form" %>
   <div class="button-group">
       <a><%= link_to t('.edit_button'), edit_post_path(@post), class: "btn btn-primary btn-sm" %></a>
       <%= link_to t('.back_button'), posts_path, class: "btn btn-secondary btn-sm" %>
