@@ -37,7 +37,7 @@ en:
       create: "Create New Post"
       sign_out: "Sign Out"
       sign_in: "Sign In"
-      sign_up: "Sign_up"
+      sign_up: "Sign up"
   posts:
     new:
       title: "New Post"

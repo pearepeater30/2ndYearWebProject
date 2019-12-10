@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   #implementing RESTful resources
   resources :posts do
     resources :like, only: [:create, :destroy]
-    resources :comments
+    resources :comments, only: [:create]
   end
 
   #root is set to the index page of posts
