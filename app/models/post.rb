@@ -9,4 +9,6 @@ class Post < ApplicationRecord
   def likes_score
     likes.count
   end
+
+
 end

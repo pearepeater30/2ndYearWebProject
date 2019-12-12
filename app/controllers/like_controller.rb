@@ -10,6 +10,7 @@ class LikeController < ApplicationController
   end
 
   def destroy
+    @like = Like.destroy(secure_params)
   end
 
   private

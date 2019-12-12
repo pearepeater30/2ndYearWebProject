@@ -38,6 +38,7 @@ en:
       sign_out: "Sign Out"
       sign_in: "Sign In"
       sign_up: "Sign up"
+      my_posts: "View your posts"
   posts:
     new:
       title: "New Post"
@@ -52,6 +53,8 @@ en:
       edit_button: "Edit"
       back_button: "Back"
       delete_button: "Delete"
+    index_user_specific:
+      title: "Your Posts"
   home:
     contact:
       name: "Name"

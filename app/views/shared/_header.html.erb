@@ -8,6 +8,7 @@
       <li class="nav-item " ><%= link_to t('.home'), posts_path%></li>
       <li class="nav-item" ><%= link_to t('.contact'), contact_path%></li>
       <%if user_signed_in? %>
+        <li class="nav-item" ><%= link_to t('.my_posts'), myposts_path%></li>
         <li class="nav-item" ><%= link_to t('.create'), new_post_path%></li>
         <li class="nav-item" ><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete%></li>
       <% else %>

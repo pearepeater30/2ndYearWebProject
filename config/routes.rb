@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
+  get 'myposts', to:'posts#index_user_specific'
 
   #implementing RESTful resources
   resources :posts do

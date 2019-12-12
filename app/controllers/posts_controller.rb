@@ -6,6 +6,10 @@ class PostsController < ApplicationController
     @posts = Post.all.order("created_at DESC")
   end
 
+  def index_user_specific
+    @posts = Post.user_posts(current_user)
+  end
+
   def new
     @post = current_user.posts.build
   end
