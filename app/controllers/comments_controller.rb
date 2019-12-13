@@ -7,7 +7,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post)
     else
-      render 'new'
+      render 'posts/show'
+      flash[:alert] = "You must add a comment"
     end
   end
 end

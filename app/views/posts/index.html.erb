@@ -10,10 +10,14 @@
 <% @posts.each do |post| %>
   <div class = "post">
     <h2><%= post.title %></h2>
-    <p class = "date">Posted at <%= time_ago_in_words(post.created_at) %></p>
-    <p>Posted by <%= post.user.email %></p>
-    <%= link_to t('.open_page_button'), post_path(post), class: "btn btn-primary btn-sm", id: "button"%>
+    <p>Likes: <%= post.likes.count %></p>
+    <div class = "post_property">
+      <p class = "date">Posted at <%= time_ago_in_words(post.created_at) %></p>
+      <p>Posted by <%= post.user.email %></p>
+      <%= link_to t('.open_page_button'), post_path(post), class: "btn btn-primary btn-sm", id: "button"%>
+    </div>
   </div>
+
 <% end %>
 </div>
 </body>

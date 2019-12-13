@@ -7,7 +7,11 @@ class PostsController < ApplicationController
   end
 
   def index_user_specific
-    @posts = Post.user_posts(current_user)
+    @posts = Post.user_posts(current_user).order("created_at DESC")
+  end
+
+  def index_liked_posts
+    @posts = Post.liked_posts(current_user).order("created_at DESC")
   end
 
   def new

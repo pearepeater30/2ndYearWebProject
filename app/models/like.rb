@@ -4,4 +4,5 @@ class Like < ApplicationRecord
 
   validates :post, uniqueness: {scope: :user}
   validates :user, uniqueness: {scope: :post}
+
 end

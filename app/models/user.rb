@@ -10,7 +10,11 @@ class User < ApplicationRecord
     UserMailer.welcome_email(self).deliver
   end
 
-  has_many :posts
+  def likes?(post)
+    post.likes.where(user_id: id).any?
+  end
+
+  has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end

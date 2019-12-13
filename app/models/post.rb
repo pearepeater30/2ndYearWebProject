@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   scope :user_posts, ->(user) {where(['user_id=?', user.id])}
+  scope :liked_posts, ->(like) {where(['user_id=?', like.id])}
 
   def likes_score
     likes.count

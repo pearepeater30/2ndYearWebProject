@@ -1,20 +1,26 @@
 class LikeController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_post
+
   def create
-    @like = Like.new(secure_params)
-    @like.post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
+    @like = @post.likes.new
+    @like.user_id = current_user.id if current_user
+    @like.save
     if @like.save
-      respond_to do |format|
-        format.html {redirect_to @like.post}
-      end
+      redirect_to post_path(@post)
+    else
+      render 'new'
     end
   end
 
   def destroy
-    @like = Like.destroy(secure_params)
+    @post.likes.where(user_id: current_user.id).destroy_all
+    redirect_to post_path(@post)
   end
 
   private
-  def secure_params
-    params.require(:like).permit(:user)
+  def set_post
+    @post = Post.find(params[:post_id])
   end
 end

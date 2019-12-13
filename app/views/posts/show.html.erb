@@ -12,6 +12,9 @@
       <%= link_to t('.back_button'), posts_path, class: "btn btn-secondary btn-sm" %>
     <%end%>
   </div>
+  <div id = "likes">
+    <%= render "posts/likes" %>
+  </div>
   <h3>Comments</h3>
   <div class = "show_comments">
     <%= render @post.comments %>
