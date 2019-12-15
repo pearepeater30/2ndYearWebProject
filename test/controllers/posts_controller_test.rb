@@ -74,4 +74,11 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     patch post_url(@post), params: {post: { title: nil, content: 'MyUpdatedContent' } }
     assert_redirected_to root_path
   end
+
+  test "should not delete post as different user" do
+    sign_in @seconduser
+    assert_difference('Post.count', 0) do
+      delete post_url(@post)
+    end
+  end
 end
