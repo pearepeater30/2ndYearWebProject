@@ -10,10 +10,10 @@ class HomeController < ApplicationController
 
     #check if email is blank in the form
     if email.blank?
-      flash[:alert] = "You must supply an email address"
+      flash[:alert] = t('.no_email_error')
     else
       ContactMailer.contact_email(email,name,telephone,message).deliver_now
-      flash[:notice] = "Thank you. We will be in touch shortly"
+      flash[:notice] = t('.thank_you_message')
     end
     redirect_to root_path
   end

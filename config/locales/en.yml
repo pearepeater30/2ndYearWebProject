@@ -65,6 +65,8 @@ en:
       telephone: "Telephone"
       message: "Message"
       submit: "Submit"
+    no_email_error: "You must supply an email address"
+    thank_you_message: "Thank you. We will be in touch shortly"
   contact_mailer:
     contact_email:
       name: "Name"

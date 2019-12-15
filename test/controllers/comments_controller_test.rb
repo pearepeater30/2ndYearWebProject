@@ -14,4 +14,12 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
       assert_equal(@post.id, Comment.last.post_id)
     end
   end
+
+  test "should show comment" do
+    post post_comments_url(@post), params: { comment: {comment: 'MyComment'}}
+    get post_url(@post)
+    assert_select 'div.show_comments' do
+      assert_select 'p#comment_content', 'MyComment'
+    end
+  end
 end

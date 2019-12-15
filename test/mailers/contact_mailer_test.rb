@@ -10,4 +10,9 @@ class ContactMailerTest < ActionMailer::TestCase
     assert_equal ['info@mynotes.com'], mail.to
     assert_equal ['matthew@me.com'], mail.from
   end
+
+  test "does not send email with no variables" do
+    ContactMailer.contact_email(nil,nil,nil,nil)
+    assert_no_emails
+  end
 end

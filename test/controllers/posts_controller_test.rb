@@ -23,13 +23,16 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Post.count') do
       post posts_url, params: { post: { title: 'MyTitle', content: 'MyContent' } }
     end
-
     assert_redirected_to post_url(Post.last)
   end
 
   test "should show post" do
     get post_url(@post)
     assert_response :success
+    assert_select 'h1', 'MyString'
+    assert_select 'div.actual_post_content' do
+      assert_select 'p', 'MyText'
+    end
   end
 
   test "should get edit" do
@@ -40,6 +43,11 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test "should update post" do
     patch post_url(@post), params: {post: { title: 'MyUpdatedTitle', content: 'MyUpdatedContent' } }
     assert_redirected_to post_url(@post)
+    get post_url(@post)
+    assert_select 'h1', 'MyUpdatedTitle'
+    assert_select 'div.actual_post_content' do
+      assert_select 'p', 'MyUpdatedContent'
+    end
   end
 
   test "should destroy post" do
