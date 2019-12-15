@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   end
 
   #root is set to the index page of posts
-  get 'like/create'
-  get 'like/destroy'
   root 'posts#index'
   get 'my_posts', to:'posts#index_user_specific'
   get 'contact', to:'home#contact'
