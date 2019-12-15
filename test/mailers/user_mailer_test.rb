@@ -3,7 +3,7 @@ require 'test_helper'
 class UserMailerTest < ActionMailer::TestCase
   include Devise::Test::IntegrationHelpers
   setup do
-    @user = users(:one)
+    @user = users(:user_one)
     sign_in @user
   end
   test "should return user email" do
