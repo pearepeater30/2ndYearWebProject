@@ -12,11 +12,6 @@ class PostsController < ApplicationController
     @posts = Post.user_posts(current_user).order("created_at DESC")
   end
 
-  #TODO remove if not used
-  def index_liked_posts
-    @posts = Post.liked_posts(current_user).order("created_at DESC")
-  end
-
   def new
     @post = current_user.posts.build
   end
@@ -45,6 +40,7 @@ class PostsController < ApplicationController
     redirect_to root_path, alert: t('.post_edit_illegal')
   end
 
+  #Method to update post
   def update
     if @post.update(post_params)
       redirect_to @post, notice: t('.post_update_success')

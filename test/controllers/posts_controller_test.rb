@@ -3,7 +3,6 @@ require 'test_helper'
 class PostsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
-  # TODO index, editing and deleting tests do not work
   setup do
     @post = posts(:post_one)
     @user = users(:user_one)

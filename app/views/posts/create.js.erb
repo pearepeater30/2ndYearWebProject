@@ -1,8 +1,7 @@
-var ready;
-ready = function() {
-    return $("#id").on("click", function(){
-    "<%=render partial: "posts/likes" %>";
+//Setting an onclick function to re-render the likes partial.
+$(document).ready(function() {
+    return $(".id").on("click", function(){
+        "<%=render partial: "posts/likes" %>";
     })
-};
-$(document).ready(ready);
+});
 $(document).on('page:load', ready);
