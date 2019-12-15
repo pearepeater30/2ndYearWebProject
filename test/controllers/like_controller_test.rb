@@ -24,7 +24,7 @@ class LikeControllerTest < ActionDispatch::IntegrationTest
   end
 
   #test explanation: a like for post_two already exists in fixture belonging to @user1. More than one like belonging to
-  # one like is forbidden, therefore it the count of likes should not increase
+  # one user is forbidden, therefore the count of likes should not increase
   test "should not like a post more than once" do
     assert_difference('Like.count', 0) do
       post post_like_index_path(@post2)
