@@ -56,6 +56,7 @@ en:
     index_user_specific:
       title: "Your Posts"
     post_update_success: "Post was successfully updated."
+    post_update_failed: "Post failed to update."
     post_edit_illegal: "You cannot edit this"
     post_delete_illegal: "You cannot delete this"
   home:

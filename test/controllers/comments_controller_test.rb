@@ -22,4 +22,10 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
       assert_select 'p#comment_content', 'MyComment'
     end
   end
+
+  test"should not create comment" do
+    assert_difference('Comment.count', 0) do
+      post post_comments_url(@post), params: { comment: {comment: nil}}
+    end
+  end
 end

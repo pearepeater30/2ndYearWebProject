@@ -6,6 +6,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @post = posts(:post_one)
     @user = users(:user_one)
+    @seconduser = users(:user_two)
     sign_in @user
   end
 
@@ -35,7 +36,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "should get edit" do
+  test "should get edit page" do
     get edit_post_path(@post)
     assert_response :success
   end
@@ -54,6 +55,23 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Post.count', -1) do
       delete post_url(@post)
     end
+    assert_redirected_to root_path
+  end
+
+  test "should not create post" do
+    assert_difference('Post.count', 0) do
+      post posts_url, params: { post: { content: 'MyContent' } }
+    end
+  end
+
+  test "should not get to edit post as different user" do
+    sign_in @seconduser
+    get edit_post_path(@post)
+    assert_redirected_to root_path
+  end
+
+  test "should not update post with empty title" do
+    patch post_url(@post), params: {post: { title: nil, content: 'MyUpdatedContent' } }
     assert_redirected_to root_path
   end
 end

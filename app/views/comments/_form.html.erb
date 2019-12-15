@@ -1,4 +1,4 @@
-<%= simple_form_for([@post, @post.comments.build]) do |form| %>
+<%= simple_form_for([@post, @post.comments.build], html:{id: :comment_form}) do |form| %>
   <%= form.input :comment %>
   <%= form.submit %>
 <% end %>

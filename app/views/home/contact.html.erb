@@ -8,18 +8,18 @@
 <h1>Contact Us</h1>
 <p>Complete the following form to get in touch with us</p>
 <div>
-  <%= form_with(url: request_contact_path, method: "post", id: "contact_form") do |f| %>
-    <%= f.label :name, t('.name') %>
-    <%= f.text_field :name, class: "contact-form-text-area", required: true%>
+  <%= form_with(url: request_contact_path, method: "post", id: "contact_form") do |form| %>
+    <%= form.label :name, t('.name') %>
+    <%= form.text_field :name, class: "contact-form-text-area", required: true%>
 
-    <%= f.label :email, t('.email') %>
-    <%=  f.text_field :email, class: "contact-form-text-area", required: true%>
+    <%= form.label :email, t('.email') %>
+    <%=  form.text_field :email, class: "contact-form-text-area", required: true%>
 
-    <%= f.label :telephone, t('.telephone') %>
-    <%=  f.text_field :telephone, class: "contact-form-text-area", required: true%>
+    <%= form.label :telephone, t('.telephone') %>
+    <%=  form.text_field :telephone, class: "contact-form-text-area", required: true%>
 
-    <%= f.label :message, t('.message') %>
-    <%=  f.text_field :message, class: "contact-form-text-area", required: true%>
+    <%= form.label :message, t('.message') %>
+    <%=  form.text_field :message, class: "contact-form-text-area", required: true%>
 
     <%= submit_tag(t('.submit')) %>
   <% end %>

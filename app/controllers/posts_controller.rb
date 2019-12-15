@@ -45,7 +45,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to @post, notice: t('.post_update_success')
     else
-      render 'edit'
+      redirect_to root_path, alert: t('.post_update_failed')
     end
   end
 

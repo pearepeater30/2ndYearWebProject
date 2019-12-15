@@ -1,5 +1,5 @@
 <div class="container">
-  <%= simple_form_for @post do |form| %>
+  <%= simple_form_for @post, html: {id: "post_form"} do |form| %>
     <%= form.label :title %>
     <%= form.text_field :title, placeholder: '   Your title here', required: true %>
 

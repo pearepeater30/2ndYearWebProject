@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post)
     else
-      redirect_to post_path(@post)
+      redirect_to root_path
       flash[:alert] = t(".comment_add_fail")
     end
   end
