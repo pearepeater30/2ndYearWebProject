@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
 </head>
 <body>
 <h1>Contact Us</h1>
 <p>Complete the following form to get in touch with us</p>
 <div>
-  <%= form_with(url: request_contact_path, method: "post") do %>
-    <%= label_tag(:name, t('.name')) %>
-    <%= text_field_tag(:name) %>
+  <%= form_with(url: request_contact_path, method: "post", id: "contact_form") do |f| %>
+    <%= f.label :name, t('.name') %>
+    <%= f.text_field :name, class: "contact-form-text-area", required: true%>
 
-    <%= label_tag(:email, t('.email')) %>
-    <%= text_field_tag(:email) %>
+    <%= f.label :email, t('.email') %>
+    <%=  f.text_field :email, class: "contact-form-text-area", required: true%>
 
-    <%= label_tag(:telephone, t('.telephone')) %>
-    <%= text_field_tag(:telephone) %>
+    <%= f.label :telephone, t('.telephone') %>
+    <%=  f.text_field :telephone, class: "contact-form-text-area", required: true%>
 
-    <%= label_tag(:message, t('.message')) %>
-    <%= text_field_tag(:message) %>
+    <%= f.label :message, t('.message') %>
+    <%=  f.text_field :message, class: "contact-form-text-area", required: true%>
 
     <%= submit_tag(t('.submit')) %>
   <% end %>
