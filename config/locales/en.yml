@@ -55,6 +55,9 @@ en:
       delete_button: "Delete"
     index_user_specific:
       title: "Your Posts"
+    post_update_success: "Post was successfully updated."
+    post_edit_illegal: "You cannot edit this"
+    post_delete_illegal: "You cannot delete this"
   home:
     contact:
       name: "Name"
@@ -71,6 +74,12 @@ en:
       thanks: "Thanks,"
   user_mailer:
     welcome_email:
+  comments:
+    comment_add_fail: "You cannot submit an empty comment"
+  like:
+    like_add_fail: "Something went wrong with adding like"
+
+
 
 
   hello: "Hello world"

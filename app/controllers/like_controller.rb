@@ -10,7 +10,7 @@ class LikeController < ApplicationController
     if @like.save
       redirect_to post_path(@post)
     else
-      render 'new'
+      redirect_to posts_path(@post), alert: t('.like_add_fail')
     end
   end
 

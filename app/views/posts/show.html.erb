@@ -3,6 +3,10 @@
   <div class="actual_post_content">
     <p><%= @post.content %></p>
   </div>
+  <div id = "likes">
+    <%= render "posts/likes" %>
+  </div>
+  <br>
   <div class="button-group">
     <%if current_user.id == @post.user_id%>
       <%= link_to t('.back_button'), posts_path, class: "btn btn-secondary btn-sm" %>
@@ -11,9 +15,6 @@
     <%else%>
       <%= link_to t('.back_button'), posts_path, class: "btn btn-secondary btn-sm" %>
     <%end%>
-  </div>
-  <div id = "likes">
-    <%= render "posts/likes" %>
   </div>
   <h3>Comments</h3>
   <div class = "show_comments">

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :comments
+  resources :posts
   #devise routes
   devise_for :users, controllers: {
     sessions: 'users/sessions'
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   #root is set to the index page of posts
+  # TODO remove liked_posts route if unneeded
   get 'like/create'
   get 'like/destroy'
   root 'posts#index'

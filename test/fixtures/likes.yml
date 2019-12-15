@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  post: one
-  user: one
-
-two:
-  post: two
-  user: two
+#This fixture contains one like. This like belongs to user_one and post_two. This means that the user should not be able
+#like this post more than once
+like_one:
+  post: post_two
+  user: user_one

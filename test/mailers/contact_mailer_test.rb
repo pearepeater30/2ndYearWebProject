@@ -8,6 +8,6 @@ class ContactMailerTest < ActionMailer::TestCase
     mail = ContactMailer.contact_email("matthew@me.com", "Matthew Casey",
                                        "1234567890", @message = "Hello")
     assert_equal ['info@mynotes.com'], mail.to
-    assert_equal ['info@mynotes.com'], mail.from
+    assert_equal ['matthew@me.com'], mail.from
   end
 end
