@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id if current_user
     #saves the comment
     @comment.save
-    #if the comment is saved, redirect back to the post, or it flashes a message declaring message wasn't saved
+    #if the comment is saved, redirect back to the post, or it flashes a message declaring comment wasn't saved
     if @comment.save
       redirect_to post_path(@post)
     else

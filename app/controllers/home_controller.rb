@@ -8,6 +8,7 @@ class HomeController < ApplicationController
     telephone = params[:telephone]
     message = params[:message]
 
+    #check if email is blank in the form
     if email.blank?
       flash[:alert] = "You must supply an email address"
     else
